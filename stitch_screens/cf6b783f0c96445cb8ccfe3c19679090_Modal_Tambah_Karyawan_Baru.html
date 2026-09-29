@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<meta content="mobile_tab" name="shell-type">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#059669",
+            "primary-dark": "#047857",
+            "primary-container": "#00855d",
+            "secondary": "#9d4300",
+            "secondary-container": "#fd761a",
+            "surface": "#f8f9ff",
+            "on-surface": "#0b1c30",
+            "on-surface-variant": "#475569",
+            "outline": "#94a3b8",
+            "outline-variant": "#cbd5e1",
+            "surface-container": "#e2e8f0",
+            "surface-container-low": "#f1f5f9",
+            "surface-container-lowest": "#ffffff"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen relative overflow-hidden flex flex-col font-sans">
+<!-- ==================== 1. UNDERNEATH / SCRIM: MANAJEMEN KARYAWAN PAGE ==================== -->
+<div aria-hidden="true" class="fixed inset-0 w-full h-full flex flex-col pointer-events-none select-none z-0 filter blur-[1.5px] opacity-80">
+<!-- Header Underneath -->
+<header class="w-full pt-safe bg-white border-b border-slate-200">
+<div class="h-16 px-4 flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow-sm font-bold text-base">
+<span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-bold text-base text-slate-900 leading-tight">Warteg Mobile</span>
+<span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">ADMIN</span>
+</div>
+<p class="text-xs text-slate-500">Semua Cabang / Warteg Bahari Group</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</div>
+<div class="w-9 h-9 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Wi44HW6Hp44VrrXkPtv94ZyIA7R-DrGoMRCUJ_8jizQtwQRT6KUlns32PKncxwBolnsCBwBSnrF0JhNzw67t5kU3GefaIzKncm1axO81bcRCJnqbKF6Bq7og-LbKLJdyIsJxo0Vrerk2ZOx9ARUqTDhJeNe1iecdvZMYJFbeo1jTT3qOwzSpUaovUbBw8FGlbKggwEKpjXVbOgHw-ceZdHy823HOqFnAPS2ODM6JzN-NSGsSchsidTqas">
+</div>
+</div>
+</div>
+</header>
+<!-- Content Underneath: Manajemen Karyawan Background -->
+<main class="flex-1 p-4 space-y-3 overflow-hidden bg-slate-50">
+<!-- Title & Action -->
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-lg font-bold text-slate-900">Data Karyawan</h1>
+<p class="text-xs text-slate-500">Total 28 staf aktif terdaftar</p>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span> Tambah
+        </button>
+</div>
+<!-- Search Bar -->
+<div class="flex items-center gap-2 bg-white px-3 py-2.5 rounded-xl border border-slate-200 shadow-sm">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">search</span>
+<span class="text-sm text-slate-400">Cari nama karyawan, NIK, atau cabang...</span>
+</div>
+<!-- Dummy List Items -->
+<div class="space-y-2.5">
+<div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200"></div>
+<div>
+<p class="text-sm font-bold text-slate-800">Ahmad Subagyo</p>
+<p class="text-xs text-slate-500">Koki Utama • Kemang (04)</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold">Aktif</span>
+</div>
+<div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200"></div>
+<div>
+<p class="text-sm font-bold text-slate-800">Siti Rahmawati</p>
+<p class="text-xs text-slate-500">Kasir • Blok M (01)</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold">Aktif</span>
+</div>
+<div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200"></div>
+<div>
+<p class="text-sm font-bold text-slate-800">Bambang Hidayat</p>
+<p class="text-xs text-slate-500">Pelayan • Senopati (02)</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold">Aktif</span>
+</div>
+</div>
+</main>
+</div>
+<!-- ==================== DIMMED BACKDROP / SCRIM OVERLAY ==================== -->
+<div class="fixed inset-0 bg-slate-900/60 backdrop-blur-[2px] z-40 transition-opacity flex flex-col justify-end" id="modal-backdrop">
+<!-- ==================== 2. BOTTOM SHEET MODAL (~88% HEIGHT) ==================== -->
+<div class="relative w-full h-[88vh] max-h-[88vh] bg-white rounded-t-3xl shadow-2xl flex flex-col z-50 overflow-hidden" id="employee-sheet">
+<!-- Top Grab Bar & Modal Header -->
+<div class="w-full pt-3 px-4 bg-white flex flex-col flex-shrink-0 border-b border-slate-100">
+<!-- Drag indicator pill -->
+<div class="w-12 h-1.5 bg-slate-300 rounded-full mx-auto mb-2.5"></div>
+<!-- Header row -->
+<div class="flex items-start justify-between pb-3">
+<div class="pr-2">
+<h2 class="font-bold text-lg text-slate-800 leading-tight">Tambah Karyawan Baru</h2>
+<p class="text-xs text-slate-500 mt-0.5">Lengkapi data identitas, peran &amp; biometrik staf</p>
+</div>
+<button aria-label="Tutup" class="rounded-full bg-slate-100 p-2 text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition-colors flex items-center justify-center flex-shrink-0" onclick="alert('Modal ditutup')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Step Indicator / Progress Chips -->
+<div class="flex items-center gap-1.5 pb-3 overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold text-xs whitespace-nowrap">
+<span class="w-4 h-4 rounded-full bg-emerald-600 text-white text-[10px] flex items-center justify-center font-bold">1</span>
+<span>Data Diri</span>
+</div>
+<span class="text-slate-300 text-xs">›</span>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold text-xs whitespace-nowrap">
+<span class="w-4 h-4 rounded-full bg-emerald-600 text-white text-[10px] flex items-center justify-center font-bold">2</span>
+<span>Penempatan &amp; Gaji</span>
+</div>
+<span class="text-slate-300 text-xs">›</span>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold text-xs whitespace-nowrap">
+<span class="w-4 h-4 rounded-full bg-emerald-600 text-white text-[10px] flex items-center justify-center font-bold">3</span>
+<span>Biometrik Wajah</span>
+</div>
+</div>
+</div>
+<!-- ==================== FORM BODY (SCROLLABLE) ==================== -->
+<div class="flex-1 overflow-y-auto p-4 space-y-5 bg-slate-50/50">
+<!-- 1. PHOTO & FACE ENROLLMENT PLACEHOLDER -->
+<div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center gap-3.5">
+<div class="relative flex-shrink-0">
+<div class="w-18 h-18 w-[72px] h-[72px] rounded-full bg-emerald-50 border-2 border-dashed border-emerald-300 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-emerald-600 text-[32px]">photo_camera</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="text-xs font-bold text-slate-800">Foto Wajah Verifikasi</span>
+<span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">Wajib</span>
+</div>
+<button class="mt-1.5 inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-emerald-600 text-white text-xs font-semibold shadow-sm hover:bg-emerald-700 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[15px]">add_a_photo</span>
+<span>Ambil Foto / Upload Foto</span>
+</button>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug">Pastikan wajah menghadap depan &amp; pencahayaan terang</p>
+</div>
+</div>
+<!-- 2. NAMA LENGKAP -->
+<div class="space-y-1">
+<label class="text-xs font-bold text-slate-700 flex items-center justify-between">
+<span>Nama Lengkap Karyawan</span>
+<span class="text-rose-500 font-normal">*Wajib diisi</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400 text-[18px]">badge</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-xl bg-white border border-slate-200 text-slate-800 text-sm font-medium focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all shadow-sm" type="text" value="Slamet Mulyono">
+</div>
+</div>
+<!-- 3. NOMOR WHATSAPP & NIK KTP -->
+<div class="grid grid-cols-1 gap-3.5">
+<!-- WhatsApp -->
+<div class="space-y-1">
+<label class="text-xs font-bold text-slate-700">Nomor WhatsApp Staf</label>
+<div class="flex items-center rounded-xl bg-white border border-slate-200 shadow-sm overflow-hidden focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500">
+<div class="flex items-center gap-1 px-3 py-2.5 bg-slate-100 border-r border-slate-200 text-xs font-bold text-slate-700 select-none">
+<span>🇮🇩</span>
+<span>+62</span>
+</div>
+<input class="w-full h-11 px-3 bg-white text-slate-800 text-sm font-medium focus:outline-none" type="tel" value="813-9872-1102">
+</div>
+<p class="text-[11px] text-slate-500">Digunakan untuk kirim link selfie &amp; slip gaji digital</p>
+</div>
+<!-- NIK KTP -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="text-xs font-bold text-slate-700">Nomor Induk Kependudukan (NIK KTP)</label>
+<span class="inline-flex items-center gap-0.5 text-[11px] font-semibold text-emerald-600">
+<span class="material-symbols-outlined text-[14px] fill">check_circle</span> NIK Valid (16 Digit)
+              </span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400 text-[18px]">fingerprint</span>
+<input class="w-full h-11 pl-10 pr-9 rounded-xl bg-white border border-slate-200 text-slate-800 text-sm font-medium focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all shadow-sm tracking-wider" type="text" value="3275082109960002">
+<span class="material-symbols-outlined absolute right-3 text-emerald-600 text-[18px] fill">verified</span>
+</div>
+</div>
+</div>
+<!-- 4. PERAN & POSISI (GRID 2x2) -->
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-slate-700">Peran &amp; Posisi di Outlet</label>
+<div class="grid grid-cols-2 gap-2">
+<!-- Selected Card: Koki Utama -->
+<div class="p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50/70 relative cursor-pointer shadow-sm">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-emerald-700 text-[20px]">skillet</span>
+<span class="material-symbols-outlined text-emerald-600 text-[18px] fill">check_circle</span>
+</div>
+<p class="text-xs font-bold text-slate-900 mt-1">Koki Utama</p>
+<p class="text-[10px] text-slate-600">(Dapur Basah)</p>
+</div>
+<!-- Kasir & Finansial -->
+<div class="p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer shadow-sm">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">point_of_sale</span>
+<p class="text-xs font-semibold text-slate-800 mt-1">Kasir &amp; Finansial</p>
+<p class="text-[10px] text-slate-500">POS &amp; Kas Harian</p>
+</div>
+<!-- Pelayan & Helper -->
+<div class="p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer shadow-sm">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">room_service</span>
+<p class="text-xs font-semibold text-slate-800 mt-1">Pelayan &amp; Helper</p>
+<p class="text-[10px] text-slate-500">Penyajian Depan</p>
+</div>
+<!-- Staf Cuci & Bahan -->
+<div class="p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer shadow-sm">
+<span class="material-symbols-outlined text-slate-500 text-[20px]">cleaning_services</span>
+<p class="text-xs font-semibold text-slate-800 mt-1">Staf Cuci &amp; Bahan</p>
+<p class="text-[10px] text-slate-500">Higienitas &amp; Prep</p>
+</div>
+</div>
+</div>
+<!-- 5. CABANG PENEMPATAN (DROPDOWN) -->
+<div class="space-y-1">
+<label class="text-xs font-bold text-slate-700">Cabang Penempatan</label>
+<div class="p-3 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+</div>
+<div class="min-w-0">
+<p class="text-xs font-bold text-slate-800 truncate">Warteg Bahari Kemang (Cabang 04)</p>
+<p class="text-[11px] text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-emerald-600 text-[13px] fill">location_on</span>
+<span>Radius Geofence 50m</span>
+</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">unfold_more</span>
+</div>
+</div>
+<!-- 6. JADWAL SHIFT DEFAULT -->
+<div class="space-y-1">
+<label class="text-xs font-bold text-slate-700">Jadwal Shift Default</label>
+<div class="grid grid-cols-3 gap-2">
+<!-- Shift Pagi (Selected) -->
+<button class="p-2 rounded-xl bg-emerald-600 text-white shadow-sm flex flex-col items-center justify-center text-center" type="button">
+<span class="text-[10px] font-bold uppercase tracking-wider">Shift Pagi</span>
+<span class="text-xs font-bold">07:00 - 15:00</span>
+</button>
+<!-- Shift Siang -->
+<button class="p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 shadow-sm flex flex-col items-center justify-center text-center" type="button">
+<span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Shift Siang</span>
+<span class="text-xs font-semibold text-slate-800">11:00 - 19:00</span>
+</button>
+<!-- Shift Malam -->
+<button class="p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 shadow-sm flex flex-col items-center justify-center text-center" type="button">
+<span class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Shift Malam</span>
+<span class="text-xs font-semibold text-slate-800">15:00 - 23:00</span>
+</button>
+</div>
+</div>
+<!-- 7. SKEMA GAJI -->
+<div class="space-y-2 p-3 rounded-2xl bg-white border border-slate-200 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-slate-800">Skema Penggajian</span>
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">payments</span>
+</div>
+<!-- Toggle Gaji Harian vs Bulanan -->
+<div class="p-1 rounded-xl bg-slate-100 flex items-center">
+<button class="flex-1 py-1.5 rounded-lg bg-white text-emerald-700 text-xs font-bold shadow-sm text-center" type="button">
+              Gaji Harian (Per Hadir)
+            </button>
+<button class="flex-1 py-1.5 rounded-lg text-slate-500 text-xs font-medium hover:text-slate-800 text-center" type="button">
+              Gaji Bulanan
+            </button>
+</div>
+<!-- Input Upah & Uang Makan -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="space-y-1">
+<label class="text-[11px] font-semibold text-slate-600">Gaji Pokok Harian</label>
+<div class="flex items-center px-2.5 py-2 rounded-xl bg-slate-50 border border-slate-200">
+<span class="text-xs font-bold text-slate-800">Rp 100.000</span>
+<span class="text-[10px] text-slate-500 ml-auto">/ hari</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-[11px] font-semibold text-slate-600">Uang Makan &amp; Ops</label>
+<div class="flex items-center px-2.5 py-2 rounded-xl bg-slate-50 border border-slate-200">
+<span class="text-xs font-bold text-slate-800">Rp 25.000</span>
+<span class="text-[10px] text-slate-500 ml-auto">/ hari</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 8. REKENING BANK STAF (GAJI & PAYOUT) -->
+<div class="space-y-1.5 p-3 rounded-2xl bg-white border border-slate-200 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-emerald-600 text-[16px]">account_balance</span>
+<span>Rekening Bank Staf (Gaji &amp; Payout)</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-bold">BCA</span>
+</div>
+<div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+<p class="text-xs font-mono font-bold text-slate-800 tracking-wider">Bank BCA • 8042918820</p>
+<p class="text-[11px] text-slate-500 font-semibold mt-0.5">a/n Slamet Mulyono</p>
+</div>
+</div>
+<!-- 9. METODE REGISTRASI BIOMETRIK -->
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-700">Metode Registrasi Biometrik Wajah</label>
+<!-- Option 1: WA (Recommended) -->
+<label class="flex items-start gap-2.5 p-3 rounded-xl bg-white border-2 border-emerald-600 shadow-sm cursor-pointer">
+<input checked="" class="mt-0.5 accent-emerald-600 w-4 h-4 text-emerald-600 focus:ring-emerald-500" name="biometric_method" type="radio">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="text-xs font-bold text-slate-900">Kirim Link Verifikasi Selfie ke WhatsApp Staf</span>
+<span class="px-1.5 py-0.2 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">Direkomendasikan</span>
+</div>
+<p class="text-[11px] text-slate-500 mt-0.5 leading-snug">Sistem otomatis kirim tautan ke nomor WA di atas. Staf ambil 3 selfie dari HP sebelum masuk hari pertama.</p>
+</div>
+</label>
+<!-- Option 2: Kamera Sekarang -->
+<label class="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-slate-200 shadow-sm cursor-pointer hover:bg-slate-50">
+<input class="mt-0.5 accent-emerald-600 w-4 h-4 text-emerald-600 focus:ring-emerald-500" name="biometric_method" type="radio">
+<div class="flex-1 min-w-0">
+<span class="text-xs font-semibold text-slate-800">Buka Kamera Sekarang (Daftarkan Langsung)</span>
+<p class="text-[11px] text-slate-500 mt-0.5 leading-snug">Gunakan kamera depan perangkat admin ini langsung saat wawancara / kru ada di lokasi.</p>
+</div>
+</label>
+</div>
+<div class="h-2"></div>
+</div>
+<!-- ==================== STICKY BOTTOM ACTIONS ==================== -->
+<div class="w-full p-4 bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] flex flex-col gap-1.5 flex-shrink-0 pb-safe">
+<button class="w-full min-h-[48px] py-3.5 px-4 rounded-xl bg-[#059669] hover:bg-emerald-700 text-white font-semibold text-sm shadow-md hover:shadow-lg active:scale-[0.99] transition-all flex items-center justify-center gap-2" onclick="alert('Karyawan Slamet Mulyono berhasil didaftarkan!')" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>Simpan &amp; Daftarkan Karyawan</span>
+</button>
+<button class="w-full py-2 text-center text-slate-500 hover:text-slate-800 text-xs font-semibold transition-colors" onclick="alert('Disimpan sebagai draf')" type="button">
+          Batal / Simpan Sebagai Draf
+        </button>
+</div>
+</div>
+</div>
+<!-- Bottom Nav Shell (Always persistent on mobile, active indicator on Karyawan) -->
+<nav class="fixed bottom-0 w-full z-30 pb-safe bg-white border-t border-slate-200 pointer-events-none select-none">
+<div class="flex justify-around items-center h-14 px-2">
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[22px]">dashboard</span>
+<span class="text-[10px] mt-0.5">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-emerald-600 font-bold">
+<span class="material-symbols-outlined text-[22px] fill">group</span>
+<span class="text-[10px] mt-0.5">Karyawan</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[22px]">storefront</span>
+<span class="text-[10px] mt-0.5">Cabang</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[22px]">event_available</span>
+<span class="text-[10px] mt-0.5">Presensi</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+<span class="text-[10px] mt-0.5">Gaji</span>
+</div>
+</div>
+</nav>
+</body></html>

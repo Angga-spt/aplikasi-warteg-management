@@ -1,0 +1,532 @@
+{
+  "app_info": {
+    "app_name": "Warteg Mobile Management",
+    "version": "1.0.0",
+    "group_name": "Warteg Bahari Group",
+    "generated_from": "Google Stitch UI Design",
+    "stitch_project_id": "7286322764072294349"
+  },
+  "current_user": {
+    "id": "emp-001",
+    "nik": "WB-2024-089",
+    "name": "Budi Santoso",
+    "nickname": "Mas Budi",
+    "role": "Koki Utama",
+    "role_category": "Koki",
+    "branch_id": "br-04",
+    "branch_name": "Warteg Bahari Kemang (Cabang 04)",
+    "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80",
+    "phone": "0812-3456-7890",
+    "status": "Aktif",
+    "shift_today": {
+      "name": "Shift Pagi",
+      "period": "08:00 - 16:00 WIB",
+      "gate_status": "Gerbang absen dibuka",
+      "clock_in_target": "08:00 WIB",
+      "clock_out_target": "16:00 WIB",
+      "daily_wage_estimate": 120000,
+      "attendance_status": "Belum Absen Masuk",
+      "current_time_display": "07:42:15 WIB"
+    },
+    "geofence": {
+      "current_distance_meters": 35,
+      "radius_limit_meters": 50,
+      "is_in_range": true,
+      "status_label": "In-Range",
+      "status_detail": "35m dari outlet Kemang (Radius Terverifikasi Aman)"
+    }
+  },
+  "admin_profile": {
+    "name": "Pak Haji Mansur",
+    "role": "Owner & General Manager",
+    "group_name": "Warteg Bahari Group",
+    "avatar_url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80",
+    "stats_overview": {
+      "total_active_staff": 24,
+      "new_staff_count": 2,
+      "today_present": 21,
+      "today_late": 2,
+      "today_on_leave": 1,
+      "morning_shift_rate_percent": 88
+    }
+  },
+  "branches": [
+    {
+      "id": "br-04",
+      "name": "Warteg Bahari Kemang",
+      "code": "Cabang 04",
+      "address": "Jl. Kemang Raya No. 18, Jakarta Selatan",
+      "radius_meters": 50,
+      "active_staff_count": 7,
+      "is_active": true,
+      "coordinates": {
+        "lat": -6.2738,
+        "lng": 106.8155
+      }
+    },
+    {
+      "id": "br-01",
+      "name": "Warteg Bahari Tebet",
+      "code": "Cabang 01",
+      "address": "Jl. Tebet Raya No. 45, Jakarta Selatan",
+      "radius_meters": 60,
+      "active_staff_count": 6,
+      "is_active": true,
+      "coordinates": {
+        "lat": -6.2285,
+        "lng": 106.8532
+      }
+    },
+    {
+      "id": "br-02",
+      "name": "Warteg Bahari Cipete",
+      "code": "Cabang 02",
+      "address": "Jl. Cipete Raya No. 12, Jakarta Selatan",
+      "radius_meters": 50,
+      "active_staff_count": 6,
+      "is_active": true,
+      "coordinates": {
+        "lat": -6.2789,
+        "lng": 106.7994
+      }
+    },
+    {
+      "id": "br-03",
+      "name": "Warteg Bahari Senopati",
+      "code": "Cabang 03",
+      "address": "Jl. Senopati No. 88, Jakarta Selatan",
+      "radius_meters": 75,
+      "active_staff_count": 5,
+      "is_active": true,
+      "coordinates": {
+        "lat": -6.2341,
+        "lng": 106.8102
+      }
+    }
+  ],
+  "kitchen_notes": [
+    {
+      "id": "kn-01",
+      "title": "Stok cabai rawit & tempe mendoan",
+      "description": "Butuh restock bahan segar sebelum jam sibuk makan siang (pukul 11.30 WIB).",
+      "priority": "Tinggi",
+      "author": "Mandor Dapur",
+      "time": "07:15 WIB"
+    },
+    {
+      "id": "kn-02",
+      "title": "Standarisasi Resep Sambal Terasi",
+      "description": "Gunakan takaran cabai merah keriting 2kg dan terasi Cirebon sangrai sesuai SOP.",
+      "priority": "Normal",
+      "author": "Mas Budi",
+      "time": "Kemarin"
+    },
+    {
+      "id": "kn-03",
+      "title": "Jadwal Deep Clean Exhaust & Kompor",
+      "description": "Shift malam wajib membersihkan kerak minyak kompor wajan sebelum tutup outlet.",
+      "priority": "Rutin",
+      "author": "Pak Haji Mansur",
+      "time": "2 hari lalu"
+    }
+  ],
+  "employees": [
+    {
+      "id": "emp-001",
+      "nik": "WB-2024-089",
+      "name": "Budi Santoso",
+      "role": "Koki Utama",
+      "role_group": "Koki",
+      "branch_id": "br-04",
+      "branch_name": "Kemang (04)",
+      "phone": "0812-3456-7890",
+      "shift": "Shift Pagi (07:00 - 15:00)",
+      "status": "Aktif",
+      "attendance_today": "Hadir",
+      "clock_in": "07:42 WIB",
+      "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      "id": "emp-002",
+      "nik": "WB-2024-045",
+      "name": "Siti Rahmayani",
+      "role": "Kasir & Kas Harian",
+      "role_group": "Kasir",
+      "branch_id": "br-04",
+      "branch_name": "Kemang (04)",
+      "phone": "0813-8899-1234",
+      "shift": "Shift Pagi (07:00 - 15:00)",
+      "status": "Aktif",
+      "attendance_today": "Hadir",
+      "clock_in": "07:48 WIB",
+      "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      "id": "emp-003",
+      "nik": "WB-2024-052",
+      "name": "Agus Priyono",
+      "role": "Pelayan & Helper Dapur",
+      "role_group": "Pelayan",
+      "branch_id": "br-04",
+      "branch_name": "Kemang (04)",
+      "phone": "0878-1122-3344",
+      "shift": "Shift Pagi (07:00 - 15:00)",
+      "status": "Aktif",
+      "attendance_today": "Terlambat",
+      "clock_in": "08:14 WIB",
+      "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      "id": "emp-004",
+      "nik": "WB-2024-012",
+      "name": "Joko Susilo",
+      "role": "Koki Sayur & Lauk",
+      "role_group": "Koki",
+      "branch_id": "br-01",
+      "branch_name": "Tebet (01)",
+      "phone": "0856-7788-9900",
+      "shift": "Shift Pagi (07:00 - 15:00)",
+      "status": "Aktif",
+      "attendance_today": "Hadir",
+      "clock_in": "07:35 WIB",
+      "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      "id": "emp-005",
+      "nik": "WB-2024-033",
+      "name": "Ahmad Fauzi",
+      "role": "Helper & Cuci Piring",
+      "role_group": "Pelayan",
+      "branch_id": "br-01",
+      "branch_name": "Tebet (01)",
+      "phone": "0819-0011-2233",
+      "shift": "Shift Pagi (07:00 - 15:00)",
+      "status": "Aktif",
+      "attendance_today": "Hadir",
+      "clock_in": "07:50 WIB",
+      "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      "id": "emp-006",
+      "nik": "WB-2024-061",
+      "name": "Bambang Hidayat",
+      "role": "Pelayan Depan",
+      "role_group": "Pelayan",
+      "branch_id": "br-03",
+      "branch_name": "Senopati (03)",
+      "phone": "0821-4455-6677",
+      "shift": "Shift Sore (15:00 - 23:00)",
+      "status": "Aktif",
+      "attendance_today": "Belum Hadir",
+      "clock_in": "-",
+      "avatar_url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      "id": "emp-007",
+      "nik": "WB-2024-098",
+      "name": "Slamet Mulyono",
+      "role": "Koki Baru (Training)",
+      "role_group": "Koki",
+      "branch_id": "br-02",
+      "branch_name": "Cipete (02)",
+      "phone": "0852-9988-7766",
+      "shift": "Shift Pagi (07:00 - 15:00)",
+      "status": "Registrasi Wajah",
+      "attendance_today": "Perlu Registrasi",
+      "clock_in": "-",
+      "avatar_url": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      "id": "emp-008",
+      "nik": "WB-2024-077",
+      "name": "Dewi Sartika",
+      "role": "Kasir",
+      "role_group": "Kasir",
+      "branch_id": "br-02",
+      "branch_name": "Cipete (02)",
+      "phone": "0812-9911-2244",
+      "shift": "Shift Pagi (07:00 - 15:00)",
+      "status": "Aktif",
+      "attendance_today": "Izin",
+      "clock_in": "-",
+      "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
+    }
+  ],
+  "attendance_history": {
+    "monthly_summary": {
+      "month": "Oktober 2024",
+      "total_present_days": 20,
+      "total_late_count": 2,
+      "total_leave_days": 1,
+      "target_working_days": 24
+    },
+    "weekly_calendar": [
+      {"day_code": "Sen", "day_num": 21, "status": "present", "is_selected": false},
+      {"day_code": "Sel", "day_num": 22, "status": "present", "is_selected": false},
+      {"day_code": "Rab", "day_num": 23, "status": "late", "is_selected": false},
+      {"day_code": "Kam", "day_num": 24, "status": "present", "is_selected": true},
+      {"day_code": "Jum", "day_num": 25, "status": "upcoming", "is_selected": false},
+      {"day_code": "Sab", "day_num": 26, "status": "upcoming", "is_selected": false},
+      {"day_code": "Min", "day_num": 27, "status": "off", "is_selected": false}
+    ],
+    "records": [
+      {
+        "id": "att-001",
+        "date_display": "Kamis, 24 Okt 2024",
+        "shift_name": "Shift Pagi",
+        "clock_in": "07:42 WIB",
+        "clock_out": "16:05 WIB",
+        "work_duration": "8 Jam 23 Menit",
+        "status_badge": "Tepat Waktu",
+        "status_type": "success",
+        "location": "Warteg Bahari Kemang (In-Radius 35m)",
+        "face_match_percent": 98.4
+      },
+      {
+        "id": "att-002",
+        "date_display": "Rabu, 23 Okt 2024",
+        "shift_name": "Shift Pagi",
+        "clock_in": "08:14 WIB",
+        "clock_out": "16:15 WIB",
+        "work_duration": "8 Jam 01 Menit",
+        "status_badge": "Terlambat 14 Menit",
+        "status_type": "warning",
+        "location": "Warteg Bahari Kemang (In-Radius 28m)",
+        "face_match_percent": 97.1
+      },
+      {
+        "id": "att-003",
+        "date_display": "Selasa, 22 Okt 2024",
+        "shift_name": "Shift Pagi",
+        "clock_in": "07:38 WIB",
+        "clock_out": "16:00 WIB",
+        "work_duration": "8 Jam 22 Menit",
+        "status_badge": "Tepat Waktu",
+        "status_type": "success",
+        "location": "Warteg Bahari Kemang (In-Radius 30m)",
+        "face_match_percent": 99.0
+      },
+      {
+        "id": "att-004",
+        "date_display": "Senin, 21 Okt 2024",
+        "shift_name": "Shift Pagi",
+        "clock_in": "07:45 WIB",
+        "clock_out": "16:10 WIB",
+        "work_duration": "8 Jam 25 Menit",
+        "status_badge": "Tepat Waktu",
+        "status_type": "success",
+        "location": "Warteg Bahari Kemang (In-Radius 40m)",
+        "face_match_percent": 98.0
+      },
+      {
+        "id": "att-005",
+        "date_display": "Sabtu, 19 Okt 2024",
+        "shift_name": "Shift Pagi + Lembur",
+        "clock_in": "07:30 WIB",
+        "clock_out": "19:00 WIB",
+        "work_duration": "11 Jam 30 Menit",
+        "status_badge": "Lembur 3 Jam",
+        "status_type": "info",
+        "location": "Warteg Bahari Kemang (In-Radius 25m)",
+        "face_match_percent": 98.7
+      }
+    ]
+  },
+  "user_payslip": {
+    "slip_number": "#SLP-202410-089",
+    "employee_name": "Budi Santoso",
+    "nik": "WB-2024-089",
+    "position": "Koki Utama",
+    "branch_name": "Warteg Bahari Kemang (04)",
+    "period_label": "1 - 31 Oktober 2024",
+    "disbursement_date": "25 Oktober 2024, 10:15 WIB",
+    "bank_account": "BCA • **** 8921",
+    "earnings": [
+      {
+        "description": "Gaji Pokok",
+        "note": "24 Hari Kerja Standar",
+        "amount": 2800000
+      },
+      {
+        "description": "Uang Makan & Kehadiran Penuh",
+        "note": "Rp 25.000 / hari x 26 kehadiran",
+        "amount": 650000
+      },
+      {
+        "description": "Upah Lembur Dapur",
+        "note": "12 Jam Kumulatif (Weekend peak hour)",
+        "amount": 360000
+      },
+      {
+        "description": "Bonus Omzet Bersih Dapur",
+        "note": "Pencapaian target omzet Kemang >105%",
+        "amount": 250000
+      }
+    ],
+    "deductions": [
+      {
+        "description": "Pelunasan Kasbon Staf",
+        "note": "Cicilan ke-2 dari 3",
+        "amount": 150000
+      },
+      {
+        "description": "Denda Keterlambatan Absen",
+        "note": "2x terlambat >10 menit",
+        "amount": 40000
+      },
+      {
+        "description": "Iuran BPJS Ketenagakerjaan",
+        "note": "JHT & JKK Mandiri",
+        "amount": 65000
+      }
+    ],
+    "total_earnings": 4060000,
+    "total_deductions": 255000,
+    "take_home_pay": 3805000,
+    "status": "Lunas Dibayarkan"
+  },
+  "payroll_management": {
+    "period": "Oktober 2024",
+    "total_gross_expense": 28450000,
+    "total_late_fines": 320000,
+    "total_kasbon_collected": 1850000,
+    "total_net_disbursement": 26280000,
+    "active_branches_count": 4,
+    "payout_crew_list": [
+      {
+        "id": "emp-001",
+        "name": "Budi Santoso",
+        "role": "Koki Utama (Kemang)",
+        "gross": 4060000,
+        "deduction": 255000,
+        "net": 3805000,
+        "status": "Sudah Dibayarkan",
+        "is_paid": true
+      },
+      {
+        "id": "emp-002",
+        "name": "Siti Rahmayani",
+        "role": "Kasir (Kemang)",
+        "gross": 3150000,
+        "deduction": 65000,
+        "net": 3085000,
+        "status": "Sudah Dibayarkan",
+        "is_paid": true
+      },
+      {
+        "id": "emp-003",
+        "name": "Agus Priyono",
+        "role": "Pelayan (Kemang)",
+        "gross": 2700000,
+        "deduction": 140000,
+        "net": 2560000,
+        "status": "Siap Disbursed",
+        "is_paid": false
+      },
+      {
+        "id": "emp-004",
+        "name": "Joko Susilo",
+        "role": "Koki (Tebet)",
+        "gross": 3800000,
+        "deduction": 115000,
+        "net": 3685000,
+        "status": "Siap Disbursed",
+        "is_paid": false
+      },
+      {
+        "id": "emp-005",
+        "name": "Ahmad Fauzi",
+        "role": "Helper (Tebet)",
+        "gross": 2500000,
+        "deduction": 65000,
+        "net": 2435000,
+        "status": "Siap Disbursed",
+        "is_paid": false
+      }
+    ],
+    "fine_rules": [
+      {
+        "range": "1 - 15 Menit",
+        "penalty_amount": 10000,
+        "description": "Toleransi 5 menit pertama, keterlambatan dihitung otomatis ke denda ringan"
+      },
+      {
+        "range": "16 - 30 Menit",
+        "penalty_amount": 25000,
+        "description": "Mengganggu pergantian shift persiapan makanan"
+      },
+      {
+        "range": "> 30 Menit",
+        "penalty_amount": 50000,
+        "description": "Dihitung pemotongan uang kehadiran separuh hari kerja"
+      },
+      {
+        "range": "Alpha (Tanpa Keterangan)",
+        "penalty_amount": 100000,
+        "description": "Pemotongan 1 hari kerja penuh & peringatan dari pemilik warteg"
+      }
+    ]
+  },
+  "live_attendance_feed": [
+    {
+      "id": "feed-01",
+      "employee_name": "Joko Susilo",
+      "role": "Koki Lauk",
+      "branch_name": "Warteg Bahari Tebet",
+      "timestamp": "07:35:12 WIB",
+      "status": "Masuk Tepat Waktu",
+      "status_type": "success",
+      "face_score": "98.5%",
+      "distance": "12m",
+      "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      "id": "feed-02",
+      "employee_name": "Budi Santoso",
+      "role": "Koki Utama",
+      "branch_name": "Warteg Bahari Kemang",
+      "timestamp": "07:42:15 WIB",
+      "status": "Masuk Tepat Waktu",
+      "status_type": "success",
+      "face_score": "98.4%",
+      "distance": "35m",
+      "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      "id": "feed-03",
+      "employee_name": "Siti Rahma",
+      "role": "Kasir & Kas Harian",
+      "branch_name": "Warteg Bahari Kemang",
+      "timestamp": "07:48:02 WIB",
+      "status": "Masuk Tepat Waktu",
+      "status_type": "success",
+      "face_score": "99.1%",
+      "distance": "18m",
+      "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      "id": "feed-04",
+      "employee_name": "Ahmad Fauzi",
+      "role": "Helper Cuci",
+      "branch_name": "Warteg Bahari Tebet",
+      "timestamp": "07:50:33 WIB",
+      "status": "Masuk Tepat Waktu",
+      "status_type": "success",
+      "face_score": "96.8%",
+      "distance": "22m",
+      "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      "id": "feed-05",
+      "employee_name": "Agus Priyono",
+      "role": "Pelayan Dapur",
+      "branch_name": "Warteg Bahari Kemang",
+      "timestamp": "08:14:20 WIB",
+      "status": "Terlambat 14 Menit",
+      "status_type": "warning",
+      "face_score": "97.1%",
+      "distance": "28m",
+      "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=120&q=80"
+    }
+  ]
+}
