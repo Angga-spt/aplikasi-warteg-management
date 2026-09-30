@@ -15,6 +15,7 @@ class UserMainScreen extends StatefulWidget {
 
 class _UserMainScreenState extends State<UserMainScreen> {
   int _currentIndex = 0;
+  bool _presensiIsClockIn = true;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,12 @@ class _UserMainScreenState extends State<UserMainScreen> {
         backgroundColor: Colors.white,
         indicatorColor: WartegTheme.primaryContainer,
         elevation: 4,
-        onDestinationSelected: (idx) => setState(() => _currentIndex = idx),
+        onDestinationSelected: (idx) {
+          if (idx == 1 && _currentIndex != 1) {
+            _presensiIsClockIn = true;
+          }
+          setState(() => _currentIndex = idx);
+        },
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_outlined),
@@ -68,11 +74,18 @@ class _UserMainScreenState extends State<UserMainScreen> {
     switch (_currentIndex) {
       case 0:
         return UserDashboardScreen(
-          onNavigateToPresensi: () => setState(() => _currentIndex = 1),
+          onNavigateToPresensi: ({bool isClockIn = true}) {
+            setState(() {
+              _presensiIsClockIn = isClockIn;
+              _currentIndex = 1;
+            });
+          },
           onLogout: () => Navigator.pop(context),
         );
       case 1:
         return PresensiScanScreen(
+          key: ValueKey(_presensiIsClockIn),
+          initialClockInMode: _presensiIsClockIn,
           onAttendanceSuccess: () => setState(() => _currentIndex = 0),
         );
       case 2:
@@ -81,7 +94,7 @@ class _UserMainScreenState extends State<UserMainScreen> {
         return const SlipGajiScreen();
       default:
         return UserDashboardScreen(
-          onNavigateToPresensi: () {},
+          onNavigateToPresensi: ({bool isClockIn = true}) {},
           onLogout: () => Navigator.pop(context),
         );
     }

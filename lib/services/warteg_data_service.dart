@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/services.dart';
 
 class WartegDataService {
@@ -15,7 +16,9 @@ class WartegDataService {
     if (_data != null || _isLoading) return;
     _isLoading = true;
     try {
-      final jsonString = await rootBundle.loadString('assets/data/warteg_dump_data.json');
+      final jsonString = await rootBundle.loadString(
+        'assets/data/warteg_dump_data.json',
+      );
       _data = json.decode(jsonString) as Map<String, dynamic>;
     } catch (e) {
       // Fallback data if file loading issues occur
@@ -31,10 +34,64 @@ class WartegDataService {
   List<dynamic> get branches => _data?['branches'] ?? [];
   List<dynamic> get employees => _data?['employees'] ?? [];
   List<dynamic> get kitchenNotes => _data?['kitchen_notes'] ?? [];
-  Map<String, dynamic> get attendanceHistory => _data?['attendance_history'] ?? {};
+  Map<String, dynamic> get attendanceHistory =>
+      _data?['attendance_history'] ?? {};
   Map<String, dynamic> get userPayslip => _data?['user_payslip'] ?? {};
-  Map<String, dynamic> get payrollManagement => _data?['payroll_management'] ?? {};
+  Map<String, dynamic> get payrollManagement =>
+      _data?['payroll_management'] ?? {};
   List<dynamic> get liveAttendanceFeed => _data?['live_attendance_feed'] ?? [];
+
+  String? _authToken;
+  String? get authToken => _authToken;
+
+  void setLoggedInUser(Map<String, dynamic> userData, String token) {
+    _authToken = token;
+    if (_data == null) return;
+
+    final role = (userData['role'] ?? 'user').toString().toLowerCase();
+    if (role == 'owner' || role == 'admin') {
+      final admin = _data!['admin_profile'] as Map<String, dynamic>?;
+      if (admin != null) {
+        admin['name'] =
+            userData['full_name'] ?? userData['username'] ?? admin['name'];
+        admin['email'] = userData['email'] ?? admin['email'];
+        admin['username'] = userData['username'] ?? admin['username'];
+        admin['role'] = 'Owner & General Manager';
+        admin['schedules'] = userData['schedules'] ?? admin['schedules'] ?? [];
+        if (userData['kantor'] != null) {
+          admin['kantor'] = userData['kantor'];
+          if (userData['kantor'] is Map &&
+              userData['kantor']['nama_cabang'] != null) {
+            admin['branch_name'] = userData['kantor']['nama_cabang'];
+          }
+        }
+      }
+    } else {
+      final curUser = _data!['current_user'] as Map<String, dynamic>?;
+      if (curUser != null) {
+        curUser['name'] =
+            userData['full_name'] ?? userData['username'] ?? curUser['name'];
+        curUser['full_name'] = userData['full_name'] ?? curUser['full_name'];
+        curUser['email'] = userData['email'] ?? curUser['email'];
+        curUser['username'] = userData['username'] ?? curUser['username'];
+        curUser['phone_number'] =
+            userData['phone_number'] ?? curUser['phone_number'];
+        curUser['role'] = userData['role'] ?? curUser['role'];
+        curUser['id'] = userData['id'] ?? curUser['id'];
+        if (userData['id'] != null) {
+          curUser['nik'] = '${userData['id']}';
+        }
+        curUser['schedules'] = userData['schedules'] ?? curUser['schedules'] ?? [];
+        if (userData['kantor'] != null) {
+          curUser['kantor'] = userData['kantor'];
+          if (userData['kantor'] is Map &&
+              userData['kantor']['nama_cabang'] != null) {
+            curUser['branch_name'] = userData['kantor']['nama_cabang'];
+          }
+        }
+      }
+    }
+  }
 
   void recordAttendance({required bool isClockIn, required String time}) {
     if (_data == null) return;
@@ -42,7 +99,9 @@ class WartegDataService {
     if (user != null) {
       final shift = user['shift_today'] as Map<String, dynamic>?;
       if (shift != null) {
-        shift['attendance_status'] = isClockIn ? 'Sudah Absen Masuk' : 'Sudah Absen Pulang';
+        shift['attendance_status'] = isClockIn
+            ? 'Sudah Absen Masuk'
+            : 'Sudah Absen Pulang';
         shift['current_time_display'] = '$time WIB';
       }
     }
@@ -59,7 +118,7 @@ class WartegDataService {
         'status_type': 'success',
         'face_score': '98.8%',
         'distance': '35m',
-        'avatar_url': currentUser['avatar_url']
+        'avatar_url': currentUser['avatar_url'],
       });
     }
   }
@@ -88,15 +147,15 @@ class WartegDataService {
           "clock_out_target": "16:00 WIB",
           "daily_wage_estimate": 120000,
           "attendance_status": "Belum Absen Masuk",
-          "current_time_display": "07:42:15 WIB"
+          "current_time_display": "07:42:15 WIB",
         },
         "geofence": {
           "current_distance_meters": 35,
           "radius_limit_meters": 50,
           "is_in_range": true,
           "status_label": "In-Range",
-          "status_detail": "35m dari outlet Kemang (Radius Terverifikasi Aman)"
-        }
+          "status_detail": "35m dari outlet Kemang (Radius Terverifikasi Aman)",
+        },
       },
       "admin_profile": {
         "name": "Pak Haji Mansur",
@@ -107,8 +166,8 @@ class WartegDataService {
           "today_present": 21,
           "today_late": 2,
           "today_on_leave": 1,
-          "morning_shift_rate_percent": 88
-        }
+          "morning_shift_rate_percent": 88,
+        },
       },
       "branches": [],
       "employees": [],
@@ -116,7 +175,7 @@ class WartegDataService {
       "attendance_history": {"records": []},
       "user_payslip": {"earnings": [], "deductions": []},
       "payroll_management": {"payout_crew_list": [], "fine_rules": []},
-      "live_attendance_feed": []
+      "live_attendance_feed": [],
     };
   }
 }

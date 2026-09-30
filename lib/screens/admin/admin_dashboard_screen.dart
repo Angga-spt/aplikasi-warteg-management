@@ -258,19 +258,6 @@ class AdminDashboardScreen extends StatelessWidget {
                   const SizedBox(width: 10),
                   Expanded(
                     child: _buildAdminActionButton(
-                      icon: Icons.campaign_outlined,
-                      label: 'Broadcast Dapur',
-                      color: WartegTheme.secondary,
-                      onTap: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Pesan broadcast telah dikirim ke semua layar dapur cabang!')),
-                        );
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: _buildAdminActionButton(
                       icon: Icons.payments_outlined,
                       label: 'Payroll',
                       color: const Color(0xFF2563EB),

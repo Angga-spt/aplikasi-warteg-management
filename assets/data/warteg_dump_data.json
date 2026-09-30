@@ -24,7 +24,7 @@
       "gate_status": "Gerbang absen dibuka",
       "clock_in_target": "08:00 WIB",
       "clock_out_target": "16:00 WIB",
-      "daily_wage_estimate": 120000,
+      "daily_wage_estimate": 130000,
       "attendance_status": "Belum Absen Masuk",
       "current_time_display": "07:42:15 WIB"
     },
@@ -175,81 +175,6 @@
       "attendance_today": "Terlambat",
       "clock_in": "08:14 WIB",
       "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      "id": "emp-004",
-      "nik": "WB-2024-012",
-      "name": "Joko Susilo",
-      "role": "Koki Sayur & Lauk",
-      "role_group": "Koki",
-      "branch_id": "br-01",
-      "branch_name": "Tebet (01)",
-      "phone": "0856-7788-9900",
-      "shift": "Shift Pagi (07:00 - 15:00)",
-      "status": "Aktif",
-      "attendance_today": "Hadir",
-      "clock_in": "07:35 WIB",
-      "avatar_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      "id": "emp-005",
-      "nik": "WB-2024-033",
-      "name": "Ahmad Fauzi",
-      "role": "Helper & Cuci Piring",
-      "role_group": "Pelayan",
-      "branch_id": "br-01",
-      "branch_name": "Tebet (01)",
-      "phone": "0819-0011-2233",
-      "shift": "Shift Pagi (07:00 - 15:00)",
-      "status": "Aktif",
-      "attendance_today": "Hadir",
-      "clock_in": "07:50 WIB",
-      "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      "id": "emp-006",
-      "nik": "WB-2024-061",
-      "name": "Bambang Hidayat",
-      "role": "Pelayan Depan",
-      "role_group": "Pelayan",
-      "branch_id": "br-03",
-      "branch_name": "Senopati (03)",
-      "phone": "0821-4455-6677",
-      "shift": "Shift Sore (15:00 - 23:00)",
-      "status": "Aktif",
-      "attendance_today": "Belum Hadir",
-      "clock_in": "-",
-      "avatar_url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      "id": "emp-007",
-      "nik": "WB-2024-098",
-      "name": "Slamet Mulyono",
-      "role": "Koki Baru (Training)",
-      "role_group": "Koki",
-      "branch_id": "br-02",
-      "branch_name": "Cipete (02)",
-      "phone": "0852-9988-7766",
-      "shift": "Shift Pagi (07:00 - 15:00)",
-      "status": "Registrasi Wajah",
-      "attendance_today": "Perlu Registrasi",
-      "clock_in": "-",
-      "avatar_url": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      "id": "emp-008",
-      "nik": "WB-2024-077",
-      "name": "Dewi Sartika",
-      "role": "Kasir",
-      "role_group": "Kasir",
-      "branch_id": "br-02",
-      "branch_name": "Cipete (02)",
-      "phone": "0812-9911-2244",
-      "shift": "Shift Pagi (07:00 - 15:00)",
-      "status": "Aktif",
-      "attendance_today": "Izin",
-      "clock_in": "-",
-      "avatar_url": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
     }
   ],
   "attendance_history": {
@@ -261,13 +186,48 @@
       "target_working_days": 24
     },
     "weekly_calendar": [
-      {"day_code": "Sen", "day_num": 21, "status": "present", "is_selected": false},
-      {"day_code": "Sel", "day_num": 22, "status": "present", "is_selected": false},
-      {"day_code": "Rab", "day_num": 23, "status": "late", "is_selected": false},
-      {"day_code": "Kam", "day_num": 24, "status": "present", "is_selected": true},
-      {"day_code": "Jum", "day_num": 25, "status": "upcoming", "is_selected": false},
-      {"day_code": "Sab", "day_num": 26, "status": "upcoming", "is_selected": false},
-      {"day_code": "Min", "day_num": 27, "status": "off", "is_selected": false}
+      {
+        "day_code": "Sen",
+        "day_num": 21,
+        "status": "present",
+        "is_selected": false
+      },
+      {
+        "day_code": "Sel",
+        "day_num": 22,
+        "status": "present",
+        "is_selected": false
+      },
+      {
+        "day_code": "Rab",
+        "day_num": 23,
+        "status": "late",
+        "is_selected": false
+      },
+      {
+        "day_code": "Kam",
+        "day_num": 24,
+        "status": "present",
+        "is_selected": true
+      },
+      {
+        "day_code": "Jum",
+        "day_num": 25,
+        "status": "upcoming",
+        "is_selected": false
+      },
+      {
+        "day_code": "Sab",
+        "day_num": 26,
+        "status": "upcoming",
+        "is_selected": false
+      },
+      {
+        "day_code": "Min",
+        "day_num": 27,
+        "status": "off",
+        "is_selected": false
+      }
     ],
     "records": [
       {
@@ -503,30 +463,6 @@
       "face_score": "99.1%",
       "distance": "18m",
       "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
-    },
-    {
-      "id": "feed-04",
-      "employee_name": "Ahmad Fauzi",
-      "role": "Helper Cuci",
-      "branch_name": "Warteg Bahari Tebet",
-      "timestamp": "07:50:33 WIB",
-      "status": "Masuk Tepat Waktu",
-      "status_type": "success",
-      "face_score": "96.8%",
-      "distance": "22m",
-      "avatar_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
-    },
-    {
-      "id": "feed-05",
-      "employee_name": "Agus Priyono",
-      "role": "Pelayan Dapur",
-      "branch_name": "Warteg Bahari Kemang",
-      "timestamp": "08:14:20 WIB",
-      "status": "Terlambat 14 Menit",
-      "status_type": "warning",
-      "face_score": "97.1%",
-      "distance": "28m",
-      "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=120&q=80"
     }
   ]
 }
