@@ -44,6 +44,13 @@ class WartegDataService {
   String? _authToken;
   String? get authToken => _authToken;
 
+  /// Menghapus sesi login, token JWT / Bearer, dan me-reset data cache pengguna
+  Future<void> clearAuth() async {
+    _authToken = null;
+    _data = null;
+    await init();
+  }
+
   void setLoggedInUser(Map<String, dynamic> userData, String token) {
     _authToken = token;
     if (_data == null) return;

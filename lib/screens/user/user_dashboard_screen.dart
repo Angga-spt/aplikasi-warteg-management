@@ -6,6 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import '../../services/warteg_data_service.dart';
 import '../../services/auth_service.dart';
 import '../../theme/warteg_theme.dart';
+import '../auth/role_selection_screen.dart';
 
 class UserDashboardScreen extends StatefulWidget {
   final void Function({bool isClockIn}) onNavigateToPresensi;
@@ -288,6 +289,73 @@ class _UserDashboardScreenState extends State<UserDashboardScreen> {
     _fetchTodayAttendance();
   }
 
+  Future<void> _handleLogout() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogCtx) => AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        title: const Row(
+          children: [
+            Icon(Icons.logout_rounded, color: WartegTheme.error),
+            SizedBox(width: 8),
+            Text(
+              'Konfirmasi Keluar',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
+          ],
+        ),
+        content: const Text(
+          'Apakah Anda yakin ingin keluar dari akun? Token sesi login Anda akan dihapus.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogCtx, false),
+            child: const Text('Batal'),
+          ),
+          FilledButton(
+            style: FilledButton.styleFrom(
+              backgroundColor: WartegTheme.error,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () => Navigator.pop(dialogCtx, true),
+            child: const Text('Keluar'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed != true || !mounted) return;
+
+    // Hapus bearer / JWT token yang tersimpan di memori dan service
+    await WartegDataService().clearAuth();
+
+    if (!mounted) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Row(
+          children: [
+            Icon(Icons.check_circle_outline, color: Colors.white, size: 20),
+            SizedBox(width: 8),
+            Text('Berhasil keluar dari akun.'),
+          ],
+        ),
+        backgroundColor: WartegTheme.primary,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      ),
+    );
+
+    // Arahkan kembali ke halaman login (RoleSelectionScreen) dan bersihkan tumpukan navigasi
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (_) => const RoleSelectionScreen()),
+      (route) => false,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final service = WartegDataService();
@@ -456,15 +524,14 @@ class _UserDashboardScreenState extends State<UserDashboardScreen> {
               );
             },
           ),
-          if (widget.onLogout != null)
             IconButton(
               icon: const Icon(
                 Icons.logout,
                 size: 22,
                 color: WartegTheme.outline,
               ),
-              tooltip: 'Keluar Mode Staf',
-              onPressed: widget.onLogout,
+              tooltip: 'Keluar / Logout',
+              onPressed: _handleLogout,
             ),
           const SizedBox(width: 4),
         ],
@@ -839,7 +906,7 @@ class _UserDashboardScreenState extends State<UserDashboardScreen> {
       if (_isInRange) {
         radiusTitle = 'Radius Terverifikasi Aman';
         radiusSubtitle = '$distStr dari outlet $officeName (Maks $radStr)';
-        statusBadgeText = 'In-Range';
+        statusBadgeText = 'Akurat';
         geofenceIconBg = WartegTheme.primaryContainer;
         geofenceIconColor = WartegTheme.onPrimaryContainer;
         geofenceBadgeBg = WartegTheme.primaryContainer;
@@ -856,7 +923,7 @@ class _UserDashboardScreenState extends State<UserDashboardScreen> {
     } else {
       radiusTitle = 'Radius Terverifikasi Aman';
       radiusSubtitle = geofence['status_detail'] ?? '35m dari outlet Kemang';
-      statusBadgeText = geofence['status_label'] ?? 'In-Range';
+      statusBadgeText = geofence['status_label'] ?? 'Akurat';
       geofenceIconBg = WartegTheme.primaryContainer;
       geofenceIconColor = WartegTheme.onPrimaryContainer;
       geofenceBadgeBg = WartegTheme.primaryContainer;

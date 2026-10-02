@@ -64,7 +64,6 @@ class _AdminMainScreenState extends State<AdminMainScreen> {
           onNavigateToKaryawan: () => setState(() => _currentIndex = 1),
           onNavigateToGeofence: () => setState(() => _currentIndex = 3),
           onNavigateToPayroll: () => setState(() => _currentIndex = 4),
-          onLogout: () => Navigator.pop(context),
         );
       case 1:
         return const ManajemenKaryawanScreen();
@@ -79,7 +78,6 @@ class _AdminMainScreenState extends State<AdminMainScreen> {
           onNavigateToKaryawan: () {},
           onNavigateToGeofence: () {},
           onNavigateToPayroll: () {},
-          onLogout: () => Navigator.pop(context),
         );
     }
   }

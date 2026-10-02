@@ -80,7 +80,6 @@ class _UserMainScreenState extends State<UserMainScreen> {
               _currentIndex = 1;
             });
           },
-          onLogout: () => Navigator.pop(context),
         );
       case 1:
         return PresensiScanScreen(
@@ -95,7 +94,6 @@ class _UserMainScreenState extends State<UserMainScreen> {
       default:
         return UserDashboardScreen(
           onNavigateToPresensi: ({bool isClockIn = true}) {},
-          onLogout: () => Navigator.pop(context),
         );
     }
   }
